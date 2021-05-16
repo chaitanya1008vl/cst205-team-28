@@ -9,6 +9,9 @@
             {{ form.query.label }}
             {{ form.query() }}
             <br>
+            {{ form.count.label }}
+            {{ form.count() }}
+            <br>
             <input type="submit" value="Search">
         </form>
         {% if search_query %}
@@ -16,7 +19,7 @@
                 <h2>Your search "{{ search_query }}" returned {{ search_results|length }} result{% if search_results|length != 1 %}s{% endif %}</h2>
                 {% for result in search_results %}
                     <div>
-                        <h3><a href="{{ url_for('image', image_id=result['id']) }}">{{ result['title'] }}</a></h3>
+                        <img src="{{ result['url_n'] }}">
                     </div>
                 {% endfor %}
             </div>
