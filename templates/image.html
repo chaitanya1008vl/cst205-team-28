@@ -5,11 +5,11 @@
         <title>Team 28</title>
     </head>
     <body>
-        <img src="/static/images/{{ image_id }}.jpg">
+        <img src="{{ image_info['url'] }}" alt="{{ image_info['title'] }}">
         <form method="POST" action="">
             {{ form.csrf_token }}
-            {{ form.manipulation.label }}
-            {{ form.manipulation() }}
+            {{ form.effect.label }}
+            {{ form.effect() }}
             <br>
             <input type="submit" value="Apply">
         </form>
